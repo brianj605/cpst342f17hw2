@@ -1,29 +1,29 @@
-/* For SCSS heavily referenced offical documentation
-   http://sass-lang.com/documentation/file.SASS_REFERENCE.html
-   for 'for' loop syntax, etc.
- */
-
-
-
 /* (10 pts) Add Eric Meyer's CSS Reset. Add it to the correct place. */
-@import "3rdparty/reset.css";
+@import "reset.scss";
 
+
+/* For SCSS I referenced offical documentation
+   http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+   for 'for' loop syntax, color functions, etc.
+ */
+$body-color: #eee;
+$header-starting-size: 2rem;
 
 /* (10 pts) Style your <h1> tag. Give it a different size, font color, weight, and a serif font-face. */
 h1 {
     color: #333;
-	font-size: 2rem;
+	font-size: $header-starting-size;
 	font-weight: 800;
-    font-family: 'Rokkitt', serif;
+    font-family: 'Rokkitt', 'Times New Roman', serif;
     text-transform: uppercase;
 }
 
 /* (10 pts) Style your <h2> tag. Give it a different size, font color, weight, and a sans-serif font-face. It should be visibly different than <p> and <h1> tags.*/
 h2 {
-    color: #555;
-	font-size: 1.5rem;
+    color: #666;
+	font-size: $header-starting-size*.75;
 	font-weight: 200;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
 }
 
 /* (10 pts) Style your <p> tags. Apply a line-height so the lines are not so close together. Add a 30px margin to the bottom of the paragraphs so each paragraph clearly has spacing after.*/
@@ -33,9 +33,8 @@ p {
 }
 
 /* (20 pts) Add a full-width header and full-width footer to the page. See the sample 4 column grid for an example. Make each have a different background color than the rest of the site. */
-header, footer {
+.headerFooterBase {
     width: 100%;
-    background-color: lightblue;
     color: darkblue;
     padding: 20px;
     box-sizing: border-box;
@@ -43,11 +42,21 @@ header, footer {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
+header {
+    background-color: darken($body-color, 20%);
+    padding: 20px;
+    @extend .headerFooterBase;
+}
+
+footer {
+    background-color: darken($body-color, 35%);
+    padding: 40px 20px 60px 20px;
+    @extend .headerFooterBase;
+}
 
 /* (30 pts) Create your own 12-column grid. */
 
-/* Based on starting example from sakai for week 2 for 4 column
- */
+/* Based on starting example from sakai for week 2 for 4 column */
  
 .row {
 	margin: 20px 0;
@@ -83,8 +92,17 @@ header, footer {
 
 /* Other */
 body {
-    background: #eee;
+    background: $body-color;
     font-family: 'Quicksand', sans-serif;
+}
+
+main {
+    min-height: 1000px;
+}
+
+nav ul li {
+    float: left;
+    padding: 0 10px;
 }
 
 

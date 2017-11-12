@@ -1,23 +1,69 @@
-/* For SCSS heavily referenced offical documentation
-   http://sass-lang.com/documentation/file.SASS_REFERENCE.html
-   for 'for' loop syntax, etc.
- */
 /* (10 pts) Add Eric Meyer's CSS Reset. Add it to the correct place. */
-@import url(3rdparty/reset.css);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* For SCSS I referenced offical documentation
+   http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+   for 'for' loop syntax, color functions, etc.
+ */
 /* (10 pts) Style your <h1> tag. Give it a different size, font color, weight, and a serif font-face. */
 h1 {
   color: #333;
   font-size: 2rem;
   font-weight: 800;
-  font-family: 'Rokkitt', serif;
+  font-family: 'Rokkitt', 'Times New Roman', serif;
   text-transform: uppercase; }
 
 /* (10 pts) Style your <h2> tag. Give it a different size, font color, weight, and a sans-serif font-face. It should be visibly different than <p> and <h1> tags.*/
 h2 {
-  color: #555;
+  color: #666;
   font-size: 1.5rem;
   font-weight: 200;
-  font-family: 'Josefin Sans', sans-serif; }
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif; }
 
 /* (10 pts) Style your <p> tags. Apply a line-height so the lines are not so close together. Add a 30px margin to the bottom of the paragraphs so each paragraph clearly has spacing after.*/
 p {
@@ -25,9 +71,8 @@ p {
   margin-bottom: 30px; }
 
 /* (20 pts) Add a full-width header and full-width footer to the page. See the sample 4 column grid for an example. Make each have a different background color than the rest of the site. */
-header, footer {
+.headerFooterBase, header, footer {
   width: 100%;
-  background-color: lightblue;
   color: darkblue;
   padding: 20px;
   box-sizing: border-box;
@@ -35,9 +80,16 @@ header, footer {
   font-family: 'Open Sans', sans-serif;
   text-align: center; }
 
+header {
+  background-color: #bbbbbb;
+  padding: 20px; }
+
+footer {
+  background-color: #959595;
+  padding: 40px 20px 60px 20px; }
+
 /* (30 pts) Create your own 12-column grid. */
-/* Based on starting example from sakai for week 2 for 4 column
- */
+/* Based on starting example from sakai for week 2 for 4 column */
 .row {
   margin: 20px 0; }
 
@@ -100,5 +152,12 @@ header, footer {
 body {
   background: #eee;
   font-family: 'Quicksand', sans-serif; }
+
+main {
+  min-height: 1000px; }
+
+nav ul li {
+  float: left;
+  padding: 0 10px; }
 
 /*# sourceMappingURL=main.css.map */
